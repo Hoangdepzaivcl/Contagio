@@ -5,7 +5,7 @@ ERROR="\e[42m\e[40m[INFO]\e[0m"
 
 all() {
 
-    sed -i 's/1024/999999/g' /usr/include/bits/typesizes.h
+    sed -i 's/1024/999999/g' /usr/include/x86_64-linux-gnu/bits/typesizes.h
     ulimit -n 99999
     ulimit -u 99999
     ulimit -e 99999
@@ -362,8 +362,6 @@ clean() {
     cd Contagio
     v installer/update.v -o cup
     sudo cp cup /bin/
-
-    rm -rf themes config.toml assets sqlite tests README.md .gitignore setup.txt go.mod go.sum installer cup
 
     mkdir themes
     curl https://raw.githubusercontent.com/TryZeroOne/Contagio/main/installer/empty_config.toml -o config.toml
